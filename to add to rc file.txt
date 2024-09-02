@@ -1,0 +1,5 @@
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+PS1='\[\033[1;92m\]\$$?\n${debian_chroot:+($debian_chroot)}\[\033[0;32m\]\u\[\033[0;37m\]:\[\033[0;36m\]\w\[\033[0;37m\]\[\033[0;37m\]:\[\033[1;92m\]>|\[\033[00m\] '
